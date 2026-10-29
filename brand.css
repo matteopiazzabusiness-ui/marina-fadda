@@ -15,3 +15,14 @@ header .brand>span.logo-window{width:235px;height:66px}header img.brand-logo{wid
 footer .brand>span.logo-window{width:245px;height:68px}footer img.brand-logo{width:285px}
 @media(max-width:900px){header .brand>span.logo-window{width:215px;height:62px}header img.brand-logo{width:250px}}
 @media(max-width:600px){header .brand>span.logo-window{width:clamp(155px,46vw,195px);height:58px}header img.brand-logo{width:118%}footer .brand>span.logo-window{width:190px;height:58px}footer img.brand-logo{width:223px}}
+
+/* Minimal navigation and edge-safe layouts. */
+html{overflow-x:clip}body{width:100%;min-width:0}main{overflow-x:clip}main>*,.hero>*,.section>*,.doctor-feature>*{min-width:0}img,video{max-width:100%}
+header,header.compact{height:80px;padding:0 clamp(20px,4vw,64px);gap:20px}
+header .menu-toggle{display:flex;align-items:center;gap:18px;border:0;background:transparent;color:var(--gold);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:12px 0 12px 16px;min-height:44px;cursor:pointer}
+.menu-toggle span{font-size:24px;font-weight:400;line-height:1}
+header nav{display:none;position:absolute;top:100%;right:0;left:auto;width:min(460px,100%);max-height:calc(100svh - 80px);overflow-y:auto;background:#080808;padding:26px clamp(24px,4vw,60px) 38px;border:1px solid #dfc48b33;border-right:0;box-shadow:0 24px 40px #0003;font-size:19px;gap:0;align-items:stretch;flex-direction:column}
+header.menu-open nav{display:flex}header nav a{display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;padding:18px 0;border-bottom:1px solid #dfc48b22;font-weight:400;letter-spacing:-.02em}
+header nav a>span{display:inline;color:var(--gold);font-size:17px}header nav a:after{display:none}header nav a.nav-cta{border:0;border-top:1px solid #dfc48b55;border-radius:0;margin-top:14px;padding-top:25px;font-size:13px;letter-spacing:.04em}
+header nav a:hover,header nav a.active{color:var(--gold)}
+@media(max-width:600px){header,header.compact{height:72px;padding:0 20px}header nav{max-height:calc(100svh - 72px);width:100%;padding:20px 26px 30px}.hero-actions{flex-wrap:wrap}.hero-copy{padding-left:24px;padding-right:24px}.section,.manifesto{padding-left:24px;padding-right:24px}.chapter-hero{overflow:hidden}.text-link{max-width:100%}}
